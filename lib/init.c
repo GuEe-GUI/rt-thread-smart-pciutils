@@ -163,6 +163,11 @@ static struct pci_methods *pci_methods[PCI_ACCESS_MAX] = {
 #else
   NULL,
 #endif
+#ifdef PCI_HAVE_PM_RT_THREAD_SMART_DM
+  &pm_rt_thread_smart_dm,
+#else
+  NULL,
+#endif
 };
 
 // If PCI_ACCESS_AUTO is selected, we probe the access methods in this order
